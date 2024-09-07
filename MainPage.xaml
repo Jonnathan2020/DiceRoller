@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DiceRoller.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0">
+            
+            <!-- Texto titulo aba home-->
+			<Label 
+				Text = "Rolador de Dados" 
+			/>
+               
+            <!-- Texto para exibir o número que foi sorteado -->
+			<Label
+				x:Name="NumeroSorteado"
+				Text = "1"
+			/>
+
+            <!-- Picker para selecionar a quantidade de um item-->
+            <Picker x:Name="picker"
+                    Title="Quantidade de lados"
+                SelectedIndexChanged="picker_SelectedIndexChanged" >
+                
+                <Picker.Items>
+                    <x:String>4 Lados</x:String>
+                    <x:String>6 Lados</x:String>
+                    <x:String>8 Lados</x:String>
+                    <x:String>10 Lados</x:String>
+                    <x:String>12 Lados</x:String>
+                    <x:String>20 Lados</x:String>
+                    <x:String>100 Lados</x:String>
+                </Picker.Items>
+            </Picker>
+            
+            <!-- Botão que realiza ação de submit para sortear numero-->
+            <Button Text="Sortear número"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Clicked="Sortear_Clicked" 
+            />
+
+            <Label x:Name="selectedItemLabel"
+               Text="Selecione um item"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="CenterAndExpand"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
